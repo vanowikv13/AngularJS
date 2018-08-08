@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Directives</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+        
+    </style>
+</head>
+<body ng-app="myApp">
+        <div ng-init="PI=3.14">
+                <p>{{ 4 * PI}}</p>
+                <div ng-init="names=['Jani', 'John', 'Elizabeth']">
+                    <ul>
+                        <li ng-repeat="x in names">
+                            {{x}}
+                        </li>
+                    </ul>
+                </div>
+                <div ng-init="persons=[{name: 'Arthur', age: '13'},{name: 'John', age: '34'}, {name: 'Jenny', age: '41'}]">
+                    <ul>
+                        <li ng-repeat="x in persons">
+                            {{x.name + " " + x.age}}
+                        </li>
+                    </ul>
+                </div>
+        </div>
+        <my-own-directive></my-own-directive>
+        
+        <script>
+        var app = angular.module("myApp", []);
+        app.directive("myOwnDirective", function() {
+            return {
+                restrict: "E",
+                template : "<h1>Made by a directive!</h1>"
+            };
+        });
+        
+        </script>
+        
+        </body>
+</html>

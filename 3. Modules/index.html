@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Modules</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div ng-app="myApp">
+        <div my-directive></div>
+        <div ng-controller="myCtrl">
+            {{firstName + " " + lastName}}
+        </div>
+    </div>
+    <script>
+        var app = angular.module("myApp",[]);
+        app.directive("myDirective", function() {
+            return {template : "my own directive"};
+        });
+
+        app.controller("myCtrl", function($scope) {
+            $scope.firstName = "John";
+            $scope.lastName = "Doe";
+        });
+    </script>
+</body>
+</html>

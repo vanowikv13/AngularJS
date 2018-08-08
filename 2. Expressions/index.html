@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS expressions</title>
+    <style>
+        body{
+            background-color: black;
+            color:white;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">
+    </script>
+</head>
+<body>
+    <div ng-app="" ng-init="bg='black'" style="background-color:{{bg}}">
+        Favorite number: <input type="number" ng-model="fav">
+        <p>{{fav * fav}}</p>
+        <p ng-bind="fav * fav"></p>
+        Text color: <input style="color:{{color}}" ng-model="color"><br>
+        Background color: <input type="text" ng-model="bg"><br>
+
+        First Name: <input type="text" ng-model="firstName"><br>
+        Second Name <input type="text" ng-model="secondName">
+        <p style="color:{{color}}">{{firstName + " " + secondName}}</p>
+
+        <div ng-init="Animal={age:'4',name:'Reks'}">
+            <p>My Animal name is {{Animal.name}} and his age is {{Animal.age}}</p>
+            <p ng-bind="'My Animal name is ' + Animal.name + ' and his age is ' + Animal.age"></p>
+        </div><br>
+
+        <div ng-init="days = ['Monday', 'Thuesday', 'Wendsday', 'Thursday', 'Friday', 'Saturday', 'Sunday']">
+            In witch day you are working: <input type="number" ng-model="dayNumber"><br>
+            <p>{{days[dayNumber -1]}}</p>
+            <p ng-bind="days[dayNumber - 1]"></p>
+        </div>
+
+    </div>
+</body>
+</html>
