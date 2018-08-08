@@ -13,7 +13,9 @@ AngularJS expression are much like JS expression: They can contain literals, ope
 Examples of expressions:
 * {{5 + 5}}
 * {{firstNmae + " " + secondName}}
-* <p ng-bind="fav * fav"></p>
+* ```HTML
+<p ng-bind="fav * fav"></p>
+```
 
 Example in code:
 ```HTML
@@ -59,7 +61,7 @@ AngularJS strings are like JS strings:
         First Name: <input type="text" ng-model="firstName"><br>
         Second Name: <input type="text" ng-model="secondName"><br>
         <p>{{firstName + " " + secondName}}</p>
-        <p ng-bind="firstName + " " + secondName"></p>
+        <p ng-bind="firstName + ' ' + secondName"></p>
     </div>
 ```
 
@@ -83,6 +85,3 @@ AngularJS arrays are like JavaScript arrays:
         <p ng-bind="days[dayNumber - 1]"></p>
     </div>
 ```
-
-### What I think?
-I think for now everytihng is preaty simmple and we shouldn't stress about it :)
