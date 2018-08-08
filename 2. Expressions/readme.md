@@ -13,7 +13,7 @@ AngularJS expression are much like JS expression: They can contain literals, ope
 Examples of expressions:
 * {{5 + 5}}
 * {{firstNmae + " " + secondName}}
-* ```HTML
+```HTML
 <p ng-bind="fav * fav"></p>
 ```
 
